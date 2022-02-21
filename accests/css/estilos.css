@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{ 
+    background-image: url(../images/background.jpg);   /*Ingresar un fondo a la pagina*/
+    background-size: cover;                             /*para que se adapte al tamaño*/
+    background-repeat: no-repeat;                       /*para que no se repita el fondo*/
+    background-position: center;                        /*para que quede centrado*/
+    background-attachment: fixed;                       /*para que se adapte bien al ancho y alto de la pagina*/
+
+} 
+
+/*Diseño del formulario*/
+
+main{
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.contenedor__todo{       /*Aqui se llama las class que están en los div de indes.html*/
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+
+}
+
+/*Caja trasera*/
+.caja__trasera{           /*Aqui se llama las class que están en los div de indes.html*/
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;          /*Se coloca el uno al lado del otro*/
+    justify-content: center;
+    backdrop-filter: blur(10px); /*Se crea una caja transparente*/
+    background-color: rgba(0, 98, 255, 0.6);
+
+}
+
+.caja__trasera div{
+    margin: 100px 40px; /*Se hace un buen margen de la caja transparente*/
+    color: white;    /*Color de la letra*/
+    transition: all 500ms; /*Pequeña transición cuando se haga algún movimiento*/
+}
+
+.caja__trasera div p,
+.caja__trasera button{  /*Dar espacio alos titulos y el botón */
+    margin-top: 30px;
+}
+
+.caja__trasera div h3{
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.caja__trasera button{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    background: transparent;
+    font-size: 14px;   /*Tamaño de texto*/
+    font-weight: 600;  /*Grosor de texto*/
+    cursor: pointer;
+    color: #fff;    /*Color letra del botón*/
+    outline: none;
+    transition: all 200ms; /*Dar una transición al botón donde al pasar el curso de vuelve blanco de 200 milisegundos*/
+}
+
+.caja__trasera button:hover{   /*Cambie de color cuando se pasa el cursos por encima del botón*/
+    background: #fff;
+    color: #46a2fd;
+}
+
+ /*FORMULARIOS*/
+
+ .contenedor__login-register{
+     display: flex;           /*Para que se separen los formularios*/
+     align-items: center;     /*Y aquí se posición vertifcalmente en el centro*/
+     width: 100%;
+     max-width: 380px;
+     position: relative;
+     top: -185px;            /*Para que se posicion en el centro del contenedor*/
+     left: 10px;
+     transition: left 500ms cubic-bezier(0.175, 0.8850, 0.320, 1.275); /*Realizar la animación donde se desliza el contenedor hacia la derecha*/
+ }
+
+ .contenedor__login-register form{
+     width: 100%;
+     padding: 80px 20px;
+     background: #fff;
+     position: absolute;
+     border-radius: 20px; /*Redondear el borde del formulario*/
+
+ }
+
+ .contenedor__login-register form h2{
+     font-size: 30px;
+     text-align: center;
+     margin-bottom: 20px;
+     color: #46a2fd;
+ }
+
+ .contenedor__login-register form input{  /*Se le da forma y espaciado a los espacios donde se ingresan los datos*/
+     width: 100%;
+     margin-top: 20px;
+     padding: 10px;
+     border: none;    /*Eliminar los bordes de los espacios de ingreso de datos*/
+     background: #f2f2f2;
+     font-size: 15px;
+     outline: none;  /*Eliminar el borde que aparece al pasar el curso por el espacio*/
+
+ }
+ .contenedor__login-register form button{
+     padding: 10px 40px;
+     margin-top: 40px;
+     border: none;
+     font-size: 14px;
+     background: #46a2fd;
+     color: #fff;
+     cursor: pointer;
+     outline: none;
+
+ }
+
+ .formulario__login{ /**/
+     opacity: 1;
+     display: block;
+ }
+
+ .formulario__register{
+     display: none;      /*desaparece el formario de registro y aparece el formulario de inciar sesion*/
+ }
+
+
+ /*RESPONSIVE DESIGN que se ajuste a los cambios de tamaña de una pagina o "zoom"*/
+
+ @media screen and (max-width: 850px){
+     main{
+         margin-top: 50px;
+     }
+     .caja__trasera{
+         max-width: 350px;
+         height: 300px;
+         flex-direction: column;
+         margin: auto;
+     }
+     .caja__trasera div{
+         margin: 0px;
+         position: absolute;
+     }
+     /*RESPONSIVE DESING de los formularios*/
+     .contenedor__login-register{
+         top: -10px;
+         left: -5px;
+         margin: auto;
+     }
+     .contenedor__login-register form{
+         position: relative;
+     }
+ }
